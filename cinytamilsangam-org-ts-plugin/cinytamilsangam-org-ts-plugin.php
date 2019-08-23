@@ -3,7 +3,7 @@
 Plugin Name:  cinytamilsangam-org-ts-plugin
 Plugin URI:   https://cincytamilsangam.org/ts/plugin
 Description:  Custom code for Cincinnti Tamil Sangam Tamil School
-Version:      1.1
+Version:      1.2
 */
 class Ts_students {
 	/**
@@ -62,7 +62,7 @@ class Ts_students {
         $reg_classes=$this->get_registered_classes($student->cust_id);
         foreach ($reg_classes as $reg_class) {
           if ($reg_class->paid==0){
-            $fees=$fees+((float)$reg_class->fee);
+            $fees=$fees+$reg_class->fee;
           }
         }
       }
@@ -141,7 +141,7 @@ class Ts_students {
      $fees=$this->compute_total_fees($students);
 
      if ($fees>0){
-      $o=$o.'<p>Total Fees Due: '.strval($fees).'</p>'; 
+      $o=$o.'<p>Total Fees Due: $'.strval($fees).'</p>'; 
       $o=$o.'<div id="paypal-button" data-total="'.strval($fees).'"><div>';
      }else{
       $o=$o.'<p>Paid in full. Thank you.</p>'; 
