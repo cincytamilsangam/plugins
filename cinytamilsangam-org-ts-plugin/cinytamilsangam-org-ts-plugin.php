@@ -3,7 +3,7 @@
 Plugin Name:  cinytamilsangam-org-ts-plugin
 Plugin URI:   https://cincytamilsangam.org/ts/plugin
 Description:  Custom code for Cincinnti Tamil Sangam Tamil School
-Version:      1.2
+Version:      1.3
 */
 class Ts_students {
 	/**
